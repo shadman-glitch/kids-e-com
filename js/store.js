@@ -2,8 +2,9 @@
  * MINIKIN STUDIO — Reactive Store State & WooCommerce Headless Client
  */
 
+const isWebOrigin = window.location.protocol.startsWith('http');
 const WC_API_CONFIG = {
-  catalogEndpoint: 'http://72.61.254.137:8085/wp-json/minikin/v1/catalog',
+  catalogEndpoint: isWebOrigin ? '/api/woocommerce/minikin/v1/catalog' : 'http://72.61.254.137:8085/wp-json/minikin/v1/catalog',
   checkoutBase: 'http://72.61.254.137:8085/checkout/',
   freeShippingThreshold: 75.0,
 };
